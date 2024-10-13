@@ -1,0 +1,85 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '10.0'
+ inhibit_all_warnings!
+ 
+source 'git@git.corp.kuaishou.com:hanzhongchao/dependents.git'
+source 'git@git.corp.kuaishou.com:ios/dependents.git'
+source 'git@git.corp.kuaishou.com:im_cloud/ios/KwaiIMFramework.git'
+source 'git@git.corp.kuaishou.com:iMV/ios-repo.git'
+source 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/500w_repo.git'
+source 'git@git.corp.kuaishou.com:incubation_app/fh_ios_modules/fh_repo.git'
+source 'git@git.corp.kuaishou.com:lib-iOS/repo.git'
+source 'https://kcache.corp.kuaishou.com/KeepSpecs/keep_spec.git'
+
+def common_swift
+  #网络库
+  pod 'Moya/RxSwift', '14.0.0'
+  pod 'Alamofire', '5.4.1'
+  
+  #Rx
+  pod 'RxSwift', :git => 'git@git.corp.kuaishou.com:ios/RxSwift.git', :tag => '5.1.1.0'
+  pod 'RxRelay', :git => 'git@git.corp.kuaishou.com:ios/RxSwift.git', :tag => '5.1.1.0'
+  pod 'RxCocoa', :git => 'git@git.corp.kuaishou.com:ios/RxSwift.git', :tag => '5.1.1.0'
+  
+  pod 'RxDataSources', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/RxDataSources.git', :tag => '4.0.1'
+  pod 'Differentiator', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/RxDataSources.git', :tag => '4.0.1'
+  
+  pod 'NSObject+Rx', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/NSObject-Rx.git', :tag => '5.0.2'
+  #布局
+  pod 'PinLayout', :git =>'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/PinLayout.git', :tag=> '1.9.2'
+  pod 'FlexLayout', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/FlexLayout.git', :tag=>'1.3.20'
+  pod 'SnapKit', :git => 'git@git.corp.kuaishou.com:ios/SnapKit.git',:tag => '5.0.1'
+  
+  #字体颜色
+  pod 'R.swift.Library', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/R.swift.Library.git', :branch => 'master'
+  pod 'R.swift', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/R.swift.git', :branch => 'master'
+  pod 'AnyCodable-FlightSchool', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/AnyCodable.git', :tag => '0.3.0'
+
+  pod 'DeviceKit', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/DeviceKit.git', :tag => '4.2.1'
+  #页面手势
+  pod 'RxGesture', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/RxGesture.git', :tag => '3.0.0'
+  pod 'SwifterSwift', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/SwifterSwift.git', :tag => '5.2.0'
+  pod 'RxOptional', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/RxOptional.git', :tag => '4.1.0'
+  pod 'WeakMapTable', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/WeakMapTable.git', :tag => '1.1.0'
+  pod 'ReactorKit', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/ReactorKit.git', :tag => '2.1.0'
+  #转场动画
+  pod 'Hero', :git=>'git@git.corp.kuaishou.com:incubation_app/fh_ios_modules/Hero.git', :tag=>'1.5.0'
+  pod 'Disk', :git=>'git@git.corp.kuaishou.com:incubation_app/fh_ios_modules/Disk.git',:commit=>'c97c163'
+  pod 'JXPagingView',:git=>'git@git.corp.kuaishou.com:incubation_app/fh_ios_modules/JXPagingView.git', :tag=>'2.0.9',:subspecs=>['Paging']
+  pod 'JXSegmentedView', '1.2.7'
+  pod 'PermissionKit', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/PermissionKit.git', :branch => 'master'
+  pod 'Toast-Swift', '5.0.1'
+  pod 'Kingfisher', '5.15.8'
+  pod 'XCGLogger', '7.0.1'
+  pod 'ObjcExceptionBridging', '1.0.1', :modular_headers => true
+  pod 'Tiercel', '3.2.0'
+  pod 'RxReachability' , '1.0.0'
+  pod 'ReachabilitySwift', '4.3.1'
+  pod 'AssociatedValues',  '5.0.0'
+end
+
+def tools
+  pod 'NVActivityIndicatorView',  :git => 'https://kcache.corp.kuaishou.com/ninjaprox/NVActivityIndicatorView.git',:tag => '5.1.1'
+end
+
+def third_party
+
+  pod 'MBProgressHUD', :modular_headers => true
+
+end
+
+install! 'cocoapods',
+      :warn_for_multiple_pod_sources => false,
+      :deterministic_uuids => false,
+      :disable_input_output_paths => true
+
+target 'HelloSwift' do
+  # Comment the next line if you don't want to use dynamic frameworks
+#  use_frameworks!
+
+  common_swift
+  third_party
+  tools
+  pod 'LookinServer', :git => 'git@git.corp.kuaishou.com:incubation_app/500w_ios_modules/LookinServer.git', :tag => '1.0.0', :configurations => ['Debug']
+
+end
