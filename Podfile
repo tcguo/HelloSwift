@@ -116,10 +116,11 @@ target 'HelloSwift' do
   
   installer.pod_target_subprojects.flat_map(&:targets).each do |target|
     target.build_configurations.each do |config|
+#      可以移除动态库自动链接
 #        if config.base_configuration_reference
 #            xcconfig_path = config.base_configuration_reference.real_path
 #            xcconfig = File.read(xcconfig_path)
-            new_xcconfig = xcconfig.sub('-framework "AgoraCore"', "")
+#            new_xcconfig = xcconfig.sub('-framework "AgoraCore"', "")
 #            File.open(xcconfig_path, "w") { |file| file << new_xcconfig }
 #        end
     end
