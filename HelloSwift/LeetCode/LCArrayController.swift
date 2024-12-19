@@ -319,12 +319,9 @@ class LCArrayController: TCBaseViewController {
     // 215. 数组中的第K个最大元素 , 方案1. 快排,
     // 你必须设计并实现时间复杂度为 O(n) 的算法解决此问题。
     func findKthLargest1(_ nums: [Int], _ k: Int) -> Int {
-        return nums.sorted { (a, b) ->Bool in
-            return (a > b)
-        }[k - 1]
-        
         return nums.sorted { return $0 > $1 }[k - 1]
     }
+    
     func findKthLargest2(_ nums: [Int], _ k: Int) -> Int {
         if nums.count == 0 {
             return 0
@@ -366,6 +363,16 @@ class LCArrayController: TCBaseViewController {
             }
         }
         return maxProfit
+    }
+    // 买卖股票的最佳时机,无限次交易
+    func maxProfit2(_ prices: [Int]) -> Int {
+        var profit = 0
+        for i in 1..<prices.count {
+            if prices[i] > prices[i - 1] {
+                profit += prices[i] - prices[i - 1]
+            }
+        }
+        return profit
     }
     
     //  删除有序数组中的重复项, 返回数组长度: 原地删除
@@ -654,5 +661,49 @@ extension LCArrayController {
             quickSort(&list, start: i + 1, end : end)
         }
         
+    }
+}
+
+extension LCArrayController {
+    func findCommonView(v1: UIView, v2: UIView) -> UIView? {
+        var arr1: [UIView] = []
+        var arr2: [UIView] = []
+        
+        var s1: UIView? = v1.superview
+        while let s = s1 {
+            arr1.append(s)
+            s1 = s.superview
+        }
+        
+        var s2: UIView? = v2.superview
+        while let s = s2 {
+            arr2.append(s)
+            s2 = s.superview
+        }
+        var i = arr1.count - 1
+        var j = arr2.count - 1
+
+        var retView: UIView? = nil
+        
+        while i >= 0, j >= 0 {
+            if arr1[i] == arr2[j] {
+                i -= 1
+                j -= 1
+            } else {
+                retView = arr1[i+1]
+                break
+            }
+        }
+        
+        return retView
+        
+        
+    //    for view1 in arr1 {
+    //        for view2 in arr2 {
+    //            if view1.isEqual(view2) {
+    //                return view1
+    //            }
+    //        }
+    //    }
     }
 }

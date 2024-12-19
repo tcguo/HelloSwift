@@ -84,6 +84,10 @@ def third_party
   ##HWPanModal https://github.com/HeathWang/HWPanModal/blob/master/README-CN.md
   #用于从底部弹出控制器（UIViewController），并用拖拽手势来关闭控制器。提供了自定义视图大小和位置，高度自定义弹出视图的各个属性。
   pod 'HWPanModal', '~> 0.9.4', :modular_headers => true
+  pod 'SDWebImage', :modular_headers => true
+  
+#  QMUI iOS 是一个致力于提高项目 UI 开发效率的解决方案，其设计目的是用于辅助快速搭建一个具备基本设计还原效果的 iOS 项目，同时利用自身提供的丰富控件及兼容处理， 让开发者能专注于业务需求而无需耗费精力在基础代码的设计上。
+  pod 'QMUIKit', :modular_headers => true
   
 end
 

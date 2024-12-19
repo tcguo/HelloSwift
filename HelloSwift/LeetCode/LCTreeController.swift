@@ -226,14 +226,13 @@ class LCTreeController: TCBaseViewController {
     
     /// 锯齿遍历
     func zigzagLevelOrder(_ root: TreeNode?) -> [[Int]] {
-        var queue: [TreeNode] = []
         guard let root = root else {
             return []
         }
-        queue.append(root)
+        
         var res: [[Int]] = []
         var level = 0
-        
+        var queue: [TreeNode] = [root]
         while !queue.isEmpty {
             var arr: [TreeNode] = []
             while !queue.isEmpty {
@@ -302,17 +301,18 @@ class LCTreeController: TCBaseViewController {
     }
     
     private func p_isMirrorTree(left: TreeNode?, right: TreeNode?) -> Bool {
-        if (left != nil && right == nil) || (left == nil && right != nil) {
-            return false
-        }
         if (left == nil && right == nil) {
             return true
+        }
+        if left == nil || right == nil {
+            return false
         }
         
         if let lef = left, let rig = right {
             if lef.val != rig.val {
                 return false
             }
+            // 这步是关键，左右节点都递归是镜像的
             return p_isMirrorTree(left: lef.left, right: rig.right) &&
                 p_isMirrorTree(left: lef.right, right: rig.left)
         }
@@ -322,8 +322,8 @@ class LCTreeController: TCBaseViewController {
 
     /// 另一棵树的子树
     func isSubtree(_ root: TreeNode?, _ subRoot: TreeNode?) -> Bool {
-       guard let root = root else{ return false }
-       guard let subRoot = subRoot else{ return true }
+       guard let root = root else { return false }
+       guard let subRoot = subRoot else { return false }
 
        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot) || isSameTree(root, subRoot)
     }
@@ -384,6 +384,14 @@ class LCTreeController: TCBaseViewController {
         return max(left, right) + 1
     }
     
+    func getMaxHeight(root: TreeNode?) -> Int {
+        guard let root = root else { return 0 }
+        let left = getMaxHeight(root: root.left)
+        let right = getMaxHeight(root: root.right)
+        return max(left, right) + 1;
+    }
+    
+    
     // 110. 平衡二叉树
     /*给定一个二叉树，判断它是否是高度平衡的二叉树。
      本题中，一棵高度平衡二叉树定义为：
@@ -404,6 +412,16 @@ class LCTreeController: TCBaseViewController {
         return isBalanced(root.left) && isBalanced(root.right)
     }
     
+    func isBalanceTree(root: TreeNode?) -> Bool {
+        guard let root = root else { return true }
+        let leftHeight = getMaxHeight(root: root.left)
+        let rightHeight = getMaxHeight(root: root.right)
+        if abs(leftHeight - rightHeight) > 1 {
+            return false
+        }
+        
+        return isBalanceTree(root: root.left) && isBalanceTree(root: root.right)
+    }
     
     /// 最小深度，DFS
     func minDepth(root: TreeNode?) -> Int {
