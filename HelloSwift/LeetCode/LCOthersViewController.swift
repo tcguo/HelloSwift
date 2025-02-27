@@ -160,7 +160,6 @@ class LCOthersViewController: UIViewController {
     
     //7. 整数反转
     func reverse(_ x: Int) -> Int {
-
         var sum = 0
         var a = 0
         var num = x

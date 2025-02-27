@@ -81,10 +81,10 @@ class LCStringController: TCBaseViewController {
     }
 
     func baseAPI() {
-        var arr = "ab,cd,e".split(separator: ",")
-        var nums: [String] = ["a", "b", "c", "d"]
-        var numsStr = nums.joined()
-        var numsStr2 = nums.joined(separator: "-")
+        _ = "ab,cd,e".split(separator: ",")
+        let nums: [String] = ["a", "b", "c", "d"]
+        _ = nums.joined()
+        _ = nums.joined(separator: "-")
     }
     
     /// 第一个不相同的字符,  左右指针夹逼

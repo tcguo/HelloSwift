@@ -52,6 +52,7 @@
 		6CCB964A2B12F18B0054B917 /* LLPanModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB96492B12F18B0054B917 /* LLPanModalViewController.swift */; };
 		6CDAEF2826BA3F5800A9EBAF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDAEF2726BA3F5800A9EBAF /* LoginView.swift */; };
 		6CDAEFC226BA55D400A9EBAF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDAEFC126BA55D400A9EBAF /* LoginViewModel.swift */; };
+		9444077E2D6F0D09007144DD /* ThreadIndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9444077D2D6F0D09007144DD /* ThreadIndexController.swift */; };
 		CE8143FB295C1E9B00F4B5F9 /* PublishersAndSubscribersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8143FA295C1E9B00F4B5F9 /* PublishersAndSubscribersController.swift */; };
 		CE8143FD295C1F0200F4B5F9 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8143FC295C1F0200F4B5F9 /* SubjectViewController.swift */; };
 		CE8143FF295C1FA000F4B5F9 /* OperatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8143FE295C1FA000F4B5F9 /* OperatorsViewController.swift */; };
@@ -113,6 +114,7 @@
 		6CDAEF2726BA3F5800A9EBAF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6CDAEFC126BA55D400A9EBAF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7B5A654B128191298DC6E212 /* Pods-HelloSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwift.release.xcconfig"; path = "Target Support Files/Pods-HelloSwift/Pods-HelloSwift.release.xcconfig"; sourceTree = "<group>"; };
+		9444077D2D6F0D09007144DD /* ThreadIndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadIndexController.swift; sourceTree = "<group>"; };
 		CE8143FA295C1E9B00F4B5F9 /* PublishersAndSubscribersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishersAndSubscribersController.swift; sourceTree = "<group>"; };
 		CE8143FC295C1F0200F4B5F9 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		CE8143FE295C1FA000F4B5F9 /* OperatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorsViewController.swift; sourceTree = "<group>"; };
@@ -193,12 +195,13 @@
 		6C547C0C2637E19600A76D29 /* HelloSwift */ = {
 			isa = PBXGroup;
 			children = (
+				6CC5350C26A94DFE0091D0EC /* LeetCode */,
+				9444077C2D6F0CC6007144DD /* Thread */,
 				6CCB96402B12EA3D0054B917 /* Service */,
 				6CCB963D2B12EA230054B917 /* LayoutUI */,
 				CE8143F9295C1DF100F4B5F9 /* Combine */,
 				6C168A7627019EEA004EB504 /* Yufa */,
 				6C898E9626BA6D8C008AC14C /* Service */,
-				6CC5350C26A94DFE0091D0EC /* LeetCode */,
 				6CC35D6D268B258300FC1284 /* Foundation */,
 				6C9C57F526881F7900AD10F3 /* RxSwift */,
 				6C547C242637E32700A76D29 /* Base */,
@@ -346,6 +349,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9444077C2D6F0CC6007144DD /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				9444077D2D6F0D09007144DD /* ThreadIndexController.swift */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
 		CE8143F9295C1DF100F4B5F9 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +500,7 @@
 			files = (
 				6C942CB72A88CC2200308014 /* LCNumsViewController.swift in Sources */,
 				6CB50B862747912000D8EE8C /* LCStringController.swift in Sources */,
+				9444077E2D6F0D09007144DD /* ThreadIndexController.swift in Sources */,
 				6C898E9F26BBB967008AC14C /* UserInfoModel.swift in Sources */,
 				6CC3645B268DE8C600FC1284 /* AppSettings.swift in Sources */,
 				CECB4000279F9E7C003EC314 /* PromiseViewController.swift in Sources */,

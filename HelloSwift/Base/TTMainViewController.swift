@@ -59,6 +59,9 @@ class TTMainViewController: TCBaseViewController {
         datalist.append(CellSectionData(title: "RxSwift", classList: [cell3, cell31, cell32]))
         datalist.append(CellSectionData(title: "Combine", classList: [psVC, subjectVC, operatorVC, combiningVC]))
         datalist.append(CellSectionData(title: "Algorithm", classList: [treeCell, listCell, stringCell, arrayCell, sortCell, other]))
+        
+        let threadIndex = CellData(title: "ThreadHome", vcClassString: "ThreadIndexController")
+        datalist.append(CellSectionData(title: "Thread", classList: [threadIndex]))
     }
     
     lazy var tableView: UITableView = {
