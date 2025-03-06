@@ -54,6 +54,20 @@ class LCLinkListController: TCBaseViewController {
         }
     }
     
+    func reverseList2(head: ListNode?) -> ListNode? {
+        guard let head else { return head }
+        
+        var preNode: ListNode?
+        var currNode: ListNode? = head
+        while currNode != nil {
+            let tmp = currNode?.next
+            currNode?.next = preNode
+            preNode = currNode
+            currNode = tmp
+        }
+        return preNode
+    }
+    
     // 反转链表
     func reverseList(head: ListNode?) -> ListNode? {
         guard let head = head else { return head }

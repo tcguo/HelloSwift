@@ -103,21 +103,28 @@ class LCStringController: TCBaseViewController {
     }
     
     //3. 无重复字符的最长子串
+    /**
+     1. 定义不重复子串的开始位置为start，结束位置为end。[start,end]区间表示无重复的子串，即滑动窗口。求这个窗口的的最大长度。
+     2. 定义map的结构(k,v)记录[start,end]中不重复子串的位置，其中key值为字符，value值为字符位置+1
+     3. 随着end不断遍历向后，会遇到与[start, end]区间内字符相同的情况，此时将字符作为key值，获取其value值，并更新start，保证[start,end]区间内不存在重复字符
+    。*/
     func lengthOfLongestSubstring(_ s: String) -> Int {
-        var charArr: [Character] = []
-        var maxlength: Int = 0
+        if s.count == 0 {
+            return 0
+        }
+        var start = 0
+        var maxlen = 0
+        var map: [Character: Int] = [:]
         
-        for c in s {
-            if charArr.contains(c) {
-                charArr.removeAll()
+        for (end, c) in s.enumerated() {
+            if let pos = map[c] {
+                start = max(start, pos)
             }
-            charArr.append(c)
-            if charArr.count > maxlength {
-                maxlength = charArr.count
-            }
+            map[c] = end + 1
+            maxlen = max(maxlen, end-start + 1)
         }
         
-        return maxlength;
+        return maxlen;
     }
     
     /// 爬梯子
