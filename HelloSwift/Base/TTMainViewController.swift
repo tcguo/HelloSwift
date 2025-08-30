@@ -45,6 +45,7 @@ class TTMainViewController: TCBaseViewController {
         let arrayCell = CellData(title: "Array", vcClassString: "LCArrayController")
         let sortCell = CellData(title: "Sort", vcClassString: "LCSortController")
         let other = CellData(title: "Other", vcClassString: "LCOthersViewController")
+        let numberCell = CellData(title: "number", vcClassString: "LCNumsViewController")
         
 
         let psVC = CellData(title: "PublishersAndSubscribers", vcClassString: "PublishersAndSubscribersController")
@@ -58,7 +59,7 @@ class TTMainViewController: TCBaseViewController {
         datalist.append(CellSectionData(title: "Layout", classList: [layout]))
         datalist.append(CellSectionData(title: "RxSwift", classList: [cell3, cell31, cell32]))
         datalist.append(CellSectionData(title: "Combine", classList: [psVC, subjectVC, operatorVC, combiningVC]))
-        datalist.append(CellSectionData(title: "Algorithm", classList: [treeCell, listCell, stringCell, arrayCell, sortCell, other]))
+        datalist.append(CellSectionData(title: "Algorithm", classList: [treeCell, listCell, stringCell, arrayCell, sortCell, numberCell, other]))
         
         let threadIndex = CellData(title: "ThreadHome", vcClassString: "ThreadIndexController")
         datalist.append(CellSectionData(title: "Thread", classList: [threadIndex]))

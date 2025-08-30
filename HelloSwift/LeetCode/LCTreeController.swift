@@ -307,6 +307,9 @@ class LCTreeController: TCBaseViewController {
         if left == nil || right == nil {
             return false
         }
+        if left!.val != right!.val {
+            return false
+        }
         
         if let lef = left, let rig = right {
             if lef.val != rig.val {
@@ -337,6 +340,24 @@ class LCTreeController: TCBaseViewController {
         }
         
         return (p?.val == q?.val) && isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right)
+    }
+    
+    func getMaxHeight(_ root: TreeNode?) -> Int {
+        guard let root = root else { return 0 }
+        var maxHeight = 0
+        var queue: [TreeNode] = [root]
+        while !queue.isEmpty {
+            let node = queue.removeFirst()
+            maxHeight = max(maxHeight, getMaxHeight(node))
+            if let left = node.left {
+                queue.append(left)
+            }
+            if let right = node.right {
+                queue.append(right)
+            }
+        }
+        
+        return maxHeight
     }
 
     // MARK: -

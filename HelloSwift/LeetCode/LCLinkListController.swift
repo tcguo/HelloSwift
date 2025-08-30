@@ -46,6 +46,7 @@ class LCLinkListController: TCBaseViewController {
         
         return head
     }
+    
     func printList(head: ListNode?) {
         var p: ListNode? = head
         while p != nil {
@@ -642,6 +643,28 @@ extension LCLinkListController {
         slow.next = nil
         return head
     }
+}
+
+extension LCLinkListController {
+    /// 链表的中间节点
+    func findMiddleNode(head: ListNode?) -> ListNode? {
+        guard let head = head else {
+            return nil
+        }
+        // 采用快慢指针
+        var slow: ListNode? = head
+        var fast: ListNode? = head
+        
+        while fast != nil && fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+        
+        // 当快指针到达末尾时，慢指针正好在中间
+        return slow
+    }
+    
+    
 }
 
 

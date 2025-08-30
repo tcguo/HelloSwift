@@ -18,7 +18,7 @@ public class ListNode {
 struct ListManager {
     // 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
     static func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
-        // 可以防止头节点被删除
+        // 可以防止头节点被删除, 创建一个虚拟头节点简化操作
         let dummyHead = ListNode(val: -1)
         dummyHead.next = head
         

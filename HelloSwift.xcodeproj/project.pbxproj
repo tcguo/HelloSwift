@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440D1B1068492C2A07D6301D /* libPods-HelloSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE0BD1A4452F6E364FEC0A /* libPods-HelloSwift.a */; };
 		6C168A7327019938004EB504 /* Obsevable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C168A7227019938004EB504 /* Obsevable.swift */; };
 		6C168A7527019DB4004EB504 /* StudyObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C168A7427019DB4004EB504 /* StudyObserver.swift */; };
 		6C2B3AB32692AED30000467B /* RxSeniorUsingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2B3AB22692AED20000467B /* RxSeniorUsingController.swift */; };
@@ -60,12 +61,11 @@
 		CECB4000279F9E7C003EC314 /* PromiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3FFF279F9E7C003EC314 /* PromiseViewController.swift */; };
 		CECB4002279FD395003EC314 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB4001279FD395003EC314 /* ProtocolViewController.swift */; };
 		CED6D5FF27915ADB0080714C /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6D5FE27915ADB0080714C /* Test.swift */; };
-		F2B039E42A61B5C8F82763BF /* libPods-HelloSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F827C521ACE34DCB22F3B1E /* libPods-HelloSwift.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52FE0BD1A4452F6E364FEC0A /* libPods-HelloSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HelloSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA5751A3C49BA5B8504FB20 /* Pods-HelloSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwift.debug.xcconfig"; path = "Target Support Files/Pods-HelloSwift/Pods-HelloSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		5F827C521ACE34DCB22F3B1E /* libPods-HelloSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HelloSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C168A7227019938004EB504 /* Obsevable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obsevable.swift; sourceTree = "<group>"; };
 		6C168A7427019DB4004EB504 /* StudyObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyObserver.swift; sourceTree = "<group>"; };
 		6C2B3AB22692AED20000467B /* RxSeniorUsingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSeniorUsingController.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2B039E42A61B5C8F82763BF /* libPods-HelloSwift.a in Frameworks */,
+				440D1B1068492C2A07D6301D /* libPods-HelloSwift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +148,7 @@
 		49C77824F422228E44F7E067 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F827C521ACE34DCB22F3B1E /* libPods-HelloSwift.a */,
+				52FE0BD1A4452F6E364FEC0A /* libPods-HelloSwift.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -380,7 +380,7 @@
 				6C547C072637E19600A76D29 /* Frameworks */,
 				6C547C082637E19600A76D29 /* Resources */,
 				6CDAEDD326BA319E00A9EBAF /* ShellScript */,
-				D3F9134725DC8D2D2ECA8160 /* [CP] Copy Pods Resources */,
+				C8531C7239F664CD0155FBFE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -476,7 +476,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		D3F9134725DC8D2D2ECA8160 /* [CP] Copy Pods Resources */ = {
+		C8531C7239F664CD0155FBFE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
