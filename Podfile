@@ -61,7 +61,7 @@ def common_swift
   pod 'Hero'
   pod 'Disk'
   pod 'JXPagingView', :subspecs=>['Paging']
-  pod 'JXSegmentedView', '1.2.7'
+  
   pod 'PermissionKit'
   pod 'Toast-Swift', '5.0.1'
   pod 'Kingfisher', '5.15.8'
@@ -72,6 +72,11 @@ def common_swift
   pod 'ReachabilitySwift', '4.3.1'
   pod 'AssociatedValues',  '5.0.0'
 #  pod 'AgoraRtcEngine_iOS', '3.4.6', :modular_headers => true
+
+  # 多页面
+  pod 'JXSegmentedView'
+  
+  
 end
 
 def tools
